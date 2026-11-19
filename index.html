@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yiting Xu</title>
+  <meta name="description" content="Yiting Xu — undergraduate student at University of Sanya, interested in LLM agent evaluation and 3D vision.">
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #2d3748;
+      --muted: #718096;
+      --heading: #1a202c;
+      --accent: #2b6cb0;
+      --accent-soft: #ebf4ff;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      max-width: 1120px;
+      margin: 0 auto;
+      gap: 48px;
+      padding: 56px 24px;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      position: sticky;
+      top: 56px;
+      align-self: start;
+      text-align: center;
+    }
+    .avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #2b6cb0, #4c51bf);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px; font-weight: 600; letter-spacing: 2px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(43,108,176,.25);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar h1 { font-size: 28px; color: var(--heading); font-weight: 700; }
+    .sidebar .role { color: var(--muted); margin-top: 4px; font-size: 15px; }
+    .sidebar .affil { margin-top: 2px; font-size: 15px; }
+    .links { list-style: none; margin-top: 24px; text-align: left; display: inline-block; }
+    .links li { margin: 8px 0; font-size: 15px; display: flex; align-items: center; gap: 10px; }
+    .links svg { width: 18px; height: 18px; fill: var(--muted); flex-shrink: 0; }
+    .nav { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 20px; }
+    .nav a { display: block; color: var(--muted); padding: 4px 0; font-size: 15px; }
+    .nav a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ---------- Main ---------- */
+    section { margin-bottom: 56px; scroll-margin-top: 32px; }
+    section h2 {
+      font-size: 30px; color: var(--heading); font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .about p { margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag {
+      background: var(--accent-soft); color: var(--accent);
+      font-size: 14px; padding: 3px 12px; border-radius: 999px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .card h3 { font-size: 18px; color: var(--heading); font-weight: 600; }
+    .card .org { color: var(--accent); font-weight: 500; font-size: 15px; }
+    .card .date {
+      display: inline-block; color: var(--muted); font-size: 14px;
+      margin: 6px 0 12px;
+    }
+    .card .date::before { content: "📅 "; }
+    .card p { margin-top: 8px; }
+    .card ul { margin: 8px 0 0 20px; }
+    .card li { margin: 4px 0; }
+    .label { font-weight: 600; color: var(--heading); }
+
+    .honors { list-style: none; }
+    .honors li {
+      display: grid; grid-template-columns: 70px 1fr; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .honors li:last-child { border-bottom: none; }
+    .honors .year { color: var(--muted); font-size: 14px; padding-top: 2px; }
+    .honors .prize { font-weight: 600; color: var(--heading); }
+    .honors .event { display: block; font-size: 15px; }
+
+    footer { color: var(--muted); font-size: 13px; text-align: center; padding: 8px 0 40px; }
+
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; gap: 32px; padding: 32px 18px; }
+      .sidebar { position: static; }
+      .nav { display: none; }
+      section h2 { font-size: 26px; }
+      .honors li { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ================= Sidebar ================= -->
+    <aside class="sidebar">
+      <!-- 有照片后：把照片命名为 avatar.jpg 放在同目录，并把下面的 YX 换成 <img src="avatar.jpg" alt="Yiting Xu"> -->
+      <div class="avatar">YX</div>
+      <h1>Yiting Xu</h1>
+      <div class="role">Undergraduate Student</div>
+      <div class="affil">University of Sanya</div>
+      <div class="role" style="margin-top:8px">Research Assistant (Remote)</div>
+      <div class="affil">University of Texas at San Antonio</div>
+
+      <ul class="links">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:xuy198661@gmail.com">xuy198661@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <span>Sanya, Hainan, China</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          <a href="https://github.com/xuy198661-hash">GitHub</a>
+        </li>
+        <!-- TODO：OpenReview 确认 ID 后取消注释
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm3 4v10h2V7H7zm4 0v10h2v-4h2a3 3 0 0 0 0-6h-4zm2 2h2a1 1 0 0 1 0 2h-2V9z"/></svg>
+          <a href="https://openreview.net/profile?id=~Yiting_Xu1">OpenReview</a>
+        </li>
+        -->
+      </ul>
+
+      <nav class="nav">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research Experience</a>
+        <a href="#honors">Honors &amp; Awards</a>
+      </nav>
+    </aside>
+
+    <!-- ================= Main ================= -->
+    <main>
+
+      <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+          I am a third-year undergraduate student majoring in Data Science and Big Data Technology
+          at the University of Sanya, and a remote research assistant working with
+          Dr. Kyrie Zhixuan Zhou at the University of Texas at San Antonio. I am at the beginning of
+          my research journey, and my current focus is the <strong>evaluation of LLM-based agents</strong>: how a benchmark should be designed so
+          that it is genuinely difficult, separates strong models from weak ones, resists contamination
+          and leaderboard overfitting, and can be reproduced by others.
+        </p>
+        <p>
+          Right now I am studying long-horizon engineering benchmarks, CAD-modeling tasks, and
+          computer-use agents (CUA), with the goal of contributing to the design of new agent
+          benchmarks. In the longer term, I am drawn to <strong>3D vision</strong>, especially point clouds,
+          and to the question of how agents can reason about and operate on 3D geometry.
+        </p>
+        <div class="tags">
+          <span class="tag">LLM Agents</span>
+          <span class="tag">Agent Benchmarks &amp; Evaluation</span>
+          <span class="tag">Computer-Use Agents</span>
+          <span class="tag">CAD</span>
+          <span class="tag">Point Clouds / 3D Vision</span>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+          <h3>B.Eng. in Data Science and Big Data Technology</h3>
+          <div class="org">University of Sanya</div>
+          <div class="date">Sep 2024 – Jun 2028 (expected)</div>
+          <p>Currently a third-year (junior) undergraduate student.</p>
+          <!-- 可选：补上 GPA / 排名 / 核心课程，例如：
+          <p><span class="label">Relevant Coursework:</span> Machine Learning, Data Structures, Probability &amp; Statistics, Linear Algebra, ...</p>
+          -->
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research Experience</h2>
+
+        <div class="card">
+          <h3>Undergraduate Research Assistant (Remote)</h3>
+          <div class="org">University of Texas at San Antonio</div>
+          <div class="date">2026 – Present</div>
+          <p>
+            Working with Dr. Kyrie Zhixuan Zhou on research on LLM agents and their evaluation.
+          </p>
+          <p>
+            Studying recent agent benchmarks, including ALE-Bench, CAD-modeling benchmarks, and
+            computer-use agent evaluations, with an eye on where task difficulty comes from, how
+            well scores separate models, and how evaluation can be kept reproducible and
+            contamination-resistant.
+          </p>
+          <p>
+            Drafted and iterated on a prototype CAD-modeling task for agent evaluation, working
+            through task specification, verification design, and failure analysis.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reproduction of ThinkGrasp</h3>
+          <div class="org">Course / self-directed project</div>
+          <div class="date">2025</div>
+          <p>
+            Reproduced <em>ThinkGrasp</em>, a vision-language system for robotic grasping in cluttered
+            scenes, using AI coding assistants. Set up the environment and pipeline end to end, which
+            gave me first-hand experience with 3D perception and embodied-AI codebases.
+          </p>
+        </div>
+      </section>
+
+      <section id="honors">
+        <h2>Honors &amp; Awards</h2>
+        <ul class="honors">
+          <li>
+            <span class="year">2026</span>
+            <span>
+              <span class="prize">🏆 National Second Prize</span>
+              <span class="event">The 18th “CSEE Cup” National College Students’ Electrical Engineering Mathematical Modeling Competition</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2026</span>
+            <span>
+              <span class="prize">🏆 Third Prize (Undergraduate Group, Guangdong Division)</span>
+              <span class="event">National College Students’ Statistical Modeling Competition</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2025</span>
+            <span>
+              <span class="prize">🏆 Best Creativity &amp; Design Award</span>
+              <span class="event">AI Agent Application and Development Competition</span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2025</span>
+            <span>
+              <span class="prize">🏆 Provincial Second Prize</span>
+              <span class="event">Chinese Collegiate Computing Competition (4C)</span>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>© 2026 Yiting Xu · Last updated Nov 2026</footer>
+</body>
+</html>
